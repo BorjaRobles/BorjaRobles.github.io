@@ -14,29 +14,17 @@ Many web interactions send xhr requests, not waiting for this requests to finish
 **\#\# Wait for xhr to finish**
 
 {% highlight java %}
-
-public static void waitUntilJqueryIsDone(int timeoutInSeconds) \{
-
-until(driver(), (d) -&gt;
-
-\{
-
-try \{
-
-Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver()).executeScript("return jQuery.active==0");
-
-return isJqueryCallDone;
-
-\} catch (Exception e) \{
-
-return e.getMessage().contains("jQuery is not defined");
-
-\}
-
-\}, timeoutInSeconds);
-
-\}
-
+public static void waitUntilJqueryIsDone(int timeoutInSeconds) {
+    until(driver(), (d) ->
+    {
+      try {
+        Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) driver()).executeScript("return jQuery.active==0");
+        return isJqueryCallDone;
+      } catch (Exception e) {
+        return e.getMessage().contains("jQuery is not defined");
+      }
+    }, timeoutInSeconds);
+  }
 {% endhighlight %}
 
 Above method helps us to wait for all xhr interactions to finish to continue.
