@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "permalink:"
   resolving common config problems, discussing new patterns, 
   investigating AI for selenium, DevOps in automation live.
 permalink: ':title'
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://borjarobles.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
