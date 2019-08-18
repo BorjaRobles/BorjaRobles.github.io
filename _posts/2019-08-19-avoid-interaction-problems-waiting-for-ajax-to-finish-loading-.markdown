@@ -3,7 +3,7 @@ layout: post
 title: Avoid interaction problems waiting for ajax to finish loading.
 date: 2019-08-19 10:32:00
 description: How to avoid loading interaction problems waiting for ajax to finish loading.
-img: current-focused-element.png
+img: xhr-pending.png
 tags:
   - Selenium
   - Java
