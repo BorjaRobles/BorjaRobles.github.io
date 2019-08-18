@@ -11,7 +11,7 @@ tags:
 
 Many web interactions send xhr requests, not waiting for this requests to finish ends up with problems of elements not ready to be click or missing elements in the UI, to avoid this we can add a simple method that waits for the requests to finish.
 
-**\#\# Wait for xhr to finish**
+**Wait for xhr to finish**
 
 {% highlight java %}
 public static void waitUntilJqueryIsDone(int timeoutInSeconds) {
