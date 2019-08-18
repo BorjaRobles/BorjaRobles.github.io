@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Type on current focused element without know the locator
+title: Type in current focused element without knowing the locator
 date: 2019-08-18 13:32:20 +0300
-description: How to type on current focused element without know the locator
+description: How to type in current focused element without knowing the locator
 img: current-focused-element.png # Add image post (optional)
 tags: [Selenium, Java]
 ---
