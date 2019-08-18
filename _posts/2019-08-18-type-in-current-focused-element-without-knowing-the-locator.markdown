@@ -1,11 +1,14 @@
 ---
 layout: post
 title: Type in current focused element without knowing the locator
-date: 2019-08-18 13:32:20 +0300
+date: 2019-08-18 10:32:00
 description: How to type in current focused element without knowing the locator
-img: current-focused-element.png # Add image post (optional)
-tags: [Selenium, Java]
+img: current-focused-element.png
+tags:
+  - Selenium
+  - Java
 ---
+
 Today I want to discuss this helper method that avoids declaring extra locators, lets put an example of a login form where users have to type username and password.
 
 * Type "username" in usernameInput
@@ -46,4 +49,4 @@ Now we can do the following.
 * Type on username input and press enter key (1 declared locator)
 * Type on the password input and press enter ( The focus is on the element, so it does not need to declare the locator)
 
-Great! We have avoided declaring 2 locators in a single test, so remember that declare extra locators and wait for them to be ready and fully loaded when you don't need them only makes your tests challenging to read, maintain and slower.
+Great\! We have avoided declaring 2 locators in a single test, so remember that declare extra locators and wait for them to be ready and fully loaded when you don't need them only makes your tests challenging to read, maintain and slower.
