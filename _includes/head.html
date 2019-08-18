@@ -4,6 +4,9 @@
 
   <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
 
+  <meta http-equiv="Content-Security-Policy" content="default-src *;
+  img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+  style-src  'self' 'unsafe-inline' *">
     <meta content="{{ site.title }}" property="og:site_name">
   {% if page.title %}
     <meta content="{{ page.title }}" property="og:title">
