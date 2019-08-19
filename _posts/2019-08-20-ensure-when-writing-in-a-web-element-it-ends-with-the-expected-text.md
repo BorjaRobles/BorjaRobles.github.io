@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ensure when writing in web element  It ends with the expected text
+title: Ensure when writing in a web element  It ends with the expected text
 date: 2019-08-20 10:32:00
 description: >-
   How to avoid type too fast on inputs and text areas ends up with incomplete
