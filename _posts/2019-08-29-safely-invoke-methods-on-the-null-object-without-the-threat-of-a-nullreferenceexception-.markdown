@@ -16,9 +16,7 @@ tags:
 
 The idea is to make code safe by skipping null reference checks and implementing an interface with methods that do nothing making the null object predictable and safe.
 
-So typically ...
-
-## &nbsp;
+So typically when we search for an element and the element is not found we get a null, for make is more easy work with not found elements we implement the nullWebElement.
 
 ## Implementing the null webElement&nbsp;
 
@@ -123,12 +121,19 @@ Now, all we need to do is redefine the findby methods to use this new WebElement
 
 {% highlight java %}
 
-public WebElement findElement(By by) \{<br>&nbsp; &nbsp; &nbsp; &nbsp; try \{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WebDriverWait wait = new WebDriverWait(driver, 5);<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return wait.until(ExpectedConditions.visibilityOfElementLocated(by));<br>&nbsp; &nbsp; &nbsp; &nbsp; \} catch (Exception e) \{<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return NullWebElement.getNull();<br>&nbsp; &nbsp; &nbsp; &nbsp; \}<br>&nbsp; &nbsp; \}
+public WebElement findElement(By by) {
+  try {
+    WebDriverWait wait = new WebDriverWait(driver, 5);
+    return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+  } catch (Exception e) {
+    return NullWebElement.getNull();
+  }
+}
 
-&nbsp; &nbsp; public List&lt;WebElement&gt; findElements(By by) \{<br>&nbsp; &nbsp; &nbsp; &nbsp; WebDriverWait wait = new WebDriverWait(driver, 5);<br>&nbsp; &nbsp; &nbsp; &nbsp; return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));<br>&nbsp; &nbsp; \}
-
+public List<WebElement> findElements(By by) {
+  WebDriverWait wait = new WebDriverWait(driver, 5);
+  return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+}
 {% endhighlight %}
 
 And thats all \! Now we can use the find methods without the nullpointer exception \!\!
-
-&nbsp;
